@@ -18,4 +18,6 @@ Android：https://blog.csdn.net/MaybeForever/article/details/90612395
 
 Android 技能图谱：https://blog.csdn.net/weixin_44339238/article/details/102722380
 
-ava 数据可视化库：https://blog.csdn.net/a419240016/article/details/102714113
+Java 数据可视化库：https://blog.csdn.net/a419240016/article/details/102714113
+
+最难Java面试题：https://mp.weixin.qq.com/s/DTpx1zgugA_s905sYr133w
