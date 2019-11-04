@@ -23,3 +23,7 @@ Java 数据可视化库：https://blog.csdn.net/a419240016/article/details/10271
 最难Java面试题：https://mp.weixin.qq.com/s/DTpx1zgugA_s905sYr133w
 
 Android:https://blog.csdn.net/weixin_44339238/article/details/102783622
+
+Python语法：https://blog.csdn.net/csdnnews/article/details/102889897
+
+递归树：https://blog.csdn.net/qq_37375427/article/details/100864530
