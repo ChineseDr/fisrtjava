@@ -31,3 +31,5 @@ Python语法：https://blog.csdn.net/csdnnews/article/details/102889897
 Android面试题:https://blog.csdn.net/u013728021/article/details/102817860
 
 软考:https://blog.csdn.net/qq_41835813/article/details/102564687
+
+wxPython：https://blog.csdn.net/xufive/article/details/82665460
