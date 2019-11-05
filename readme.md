@@ -29,3 +29,5 @@ Python语法：https://blog.csdn.net/csdnnews/article/details/102889897
 递归树：https://blog.csdn.net/qq_37375427/article/details/100864530
 
 Android面试题:https://blog.csdn.net/u013728021/article/details/102817860
+
+软考:https://blog.csdn.net/qq_41835813/article/details/102564687
