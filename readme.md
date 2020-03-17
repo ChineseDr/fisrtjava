@@ -58,3 +58,5 @@ python爬虫：https://blog.csdn.net/meteor_93/article/details/103175861
 java:https://blog.csdn.net/ThinkWon/article/details/103592572?request_id=&utm_source=distribute.pc_feed.none-task
 
 java路线：https://blog.csdn.net/ThinkWon/article/details/103592572?depth_1-utm_source=distribute.pc_feed.none-task&request_id=&utm_source=distribute.pc_feed.none-task
+
+linux:https://blog.csdn.net/dengjin20104042056/article/details/94669639
