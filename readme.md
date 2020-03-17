@@ -59,4 +59,4 @@ java:https://blog.csdn.net/ThinkWon/article/details/103592572?request_id=&utm_so
 
 java路线：https://blog.csdn.net/ThinkWon/article/details/103592572?depth_1-utm_source=distribute.pc_feed.none-task&request_id=&utm_source=distribute.pc_feed.none-task
 
-linux:https://blog.csdn.net/dengjin20104042056/article/details/99226955?depth_1-utm_source=distribute.pc_feed.none-task&request_id=&utm_source=distribute.pc_feed.none-task
+linux:https://blog.csdn.net/dengjin20104042056/article/details/99226955
