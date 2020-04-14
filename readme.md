@@ -66,3 +66,5 @@ c++:https://blog.csdn.net/qq_41453285/article/details/85799747
 数据结构：https://blog.csdn.net/u012124438/article/details/77618861
 
 数据结构篇：https://blog.csdn.net/hebtu666/article/details/103966306?depth_1-utm_source=distribute.pc_feed.none-task-blog-alirecmd-2&request_id=&utm_source=distribute.pc_feed.none-task-blog-alirecmd-2
+
+Python图片处理（Pillow）：https://blog.csdn.net/ZackSock/article/details/103794134?depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendHotData-3&utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendHotData-3
