@@ -74,3 +74,5 @@ Python图片处理（Pillow）：https://blog.csdn.net/ZackSock/article/details/
 线程：https://blog.csdn.net/qq_44755403/article/details/105376626?depth_1-utm_source=distribute.pc_feed.none-task-blog-alirecmd-3&request_id=&utm_source=distribute.pc_feed.none-task-blog-alirecmd-3
 
 synchronized：https://blog.csdn.net/weixin_42762133/article/details/103241439
+
+Telephony:https://blog.csdn.net/bert_cai/article/details/79448765
