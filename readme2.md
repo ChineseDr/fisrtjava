@@ -93,8 +93,8 @@ Rasa中文聊天机器人开发指南：https://blog.csdn.net/AndrExpert/article
 ## 7. ImageReader
 
 用于接收拍照结果和访问拍摄照片的图像数据。
-得到一个ImageReader对象的方法为newInstance(int width, int height, int format, int maxImages)。前两个参数是保存图片的宽高，第三个参数为保存图片的格式，第四个参数代表用户可以同时访问到的最大图片数量
-
+得到一个ImageReader对象的方法为 newInstance(int width, int height, int format, int maxImages)。前两个参数是保存图片的宽高，第三个参数为保存图片的格式，第四个参数代表用户可以同时访问到的最大图片数量
+- **newInstance()**：
 > 注意：
 > 这个参数应该根据具体需业务需求尽可能的小，因为它的数值越大意味着需要消耗的内存就越高
 
