@@ -14,3 +14,5 @@ Android 源码 Camera2 获取 CameraManager 对象：https://blog.csdn.net/tyyj9
 Android 源码 Camera2 openCamera 流程分析：https://blog.csdn.net/tyyj90/article/details/109173826
 
 Android 源码 Camera2 CameraService 启动:https://blog.csdn.net/tyyj90/article/details/108684612
+
+AIDL：https://www.cnblogs.com/webor2006/p/11811650.html
