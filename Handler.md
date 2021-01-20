@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
 ActivityThread->>Looper:prepareMainLooper()
 Looper->>Looper:prepare(false)
@@ -16,3 +17,4 @@ Looper->>MessageQueue:next()//获取消息
 MessageQueue-->>Looper: Message msg
 Looper->>Message:Handler.dispatchMessage(msg)
 Looper->>Message:recycleUnchecked()//回收消息
+```
