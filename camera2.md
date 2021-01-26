@@ -16,3 +16,5 @@ Android 源码 Camera2 openCamera 流程分析：https://blog.csdn.net/tyyj90/ar
 Android 源码 Camera2 CameraService 启动:https://blog.csdn.net/tyyj90/article/details/108684612
 
 AIDL：https://www.cnblogs.com/webor2006/p/11811650.html
+
+binder：https://www.cnblogs.com/webor2006/p/11741743.html
