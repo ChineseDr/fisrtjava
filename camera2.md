@@ -18,3 +18,5 @@ Android 源码 Camera2 CameraService 启动:https://blog.csdn.net/tyyj90/article
 AIDL：https://www.cnblogs.com/webor2006/p/11811650.html
 
 binder：https://www.cnblogs.com/webor2006/p/11741743.html
+
+camera2：https://blog.csdn.net/zhangbijun1230/article/details/80555769
