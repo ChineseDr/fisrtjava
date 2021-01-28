@@ -20,3 +20,7 @@ AIDL：https://www.cnblogs.com/webor2006/p/11811650.html
 binder：https://www.cnblogs.com/webor2006/p/11741743.html
 
 camera2：https://blog.csdn.net/zhangbijun1230/article/details/80555769
+
+anr分析：https://blog.csdn.net/qq_31339141/article/details/108176722
+
+crash分析：https://blog.csdn.net/arunboy/article/details/100689907
