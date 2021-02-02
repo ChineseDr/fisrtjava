@@ -1,0 +1,125 @@
+CameraService的入口函数在 frameworks/av/camera/cameraserver/main_cameraserver.cpp 中的main方法
+
+    int main(int argc __unused, char** argv __unused)
+    {
+        signal(SIGPIPE, SIG_IGN);
+      
+        // Set 3 threads for HIDL calls
+        hardware::configureRpcThreadpool(3, /*willjoin*/ false);
+    	//获取ProcessState实例
+        sp<ProcessState> proc(ProcessState::self());
+      	//通过defaultServiceManager()获取ServiceManager，当进程注册服务（addservice）或
+      	//获取服务(getService)之前都需要
+        sp<IServiceManager> sm = defaultServiceManager();
+      	//注册CameraService服务
+        CameraService::instantiate();
+      	//启动Binder线程池
+        ProcessState::self()->startThreadPool();
+      	//当前线程加入到线程池
+        IPCThreadState::self()->joinThreadPool();
+    }
+
+defaultServiceManager() 定义在 /frameworks/native/libs/binder/IServiceManager.cpp 中，返回IServiceManager 
+
+defaultServiceManager() 中重要语句 
+
+    gDefaultServiceManager = 
+      interface_cast<IServiceManager>(ProcessState::self()->getContextObject(NULL));
+
+定义在 binder\IInterface.h 中,是一个模板函数，
+
+    template<typename INTERFACE>
+    inline sp<INTERFACE> interface_cast(const sp<IBinder>& obj)
+    {
+        return INTERFACE::asInterface(obj);
+    }
+
+展开后
+
+    inline sp<IServiceManager> interface_cast(const sp<IBinder>& obj)
+    {
+        return IServiceManager::asInterface(obj);
+    }
+
+IServiceManager继承自IInterface，IServiceManager中的 DECLARE_META_INTERFACE(ServiceManager) 是写在 binder\IInterface.h 中 的宏，展开后是IServiceManager的构造函数和析构函数，以及asInterface函数，并定义了descriptor
+
+声明部分宏
+
+    #define DECLARE_META_INTERFACE(INTERFACE)                               \
+        static const ::android::String16 descriptor;                        \
+        static ::android::sp<I##INTERFACE> asInterface(                     \
+                const ::android::sp<::android::IBinder>& obj);              \
+        virtual const ::android::String16& getInterfaceDescriptor() const;  \
+        I##INTERFACE();                                                     \
+        virtual ~I##INTERFACE(); 
+
+展开后
+
+    //声明DECLARE_META_INTERFACE(ServiceManager)
+    static const ::android::String16 descriptor;
+    static ::android::sp<IServiceManager> asInterface(
+    		const ::android::sp<::android::IBinder>& obj);
+    virtual const ::android::String16& getInterfaceDescriptor() const;
+    IServiceManager();
+    virtual ~IServiceManager();
+
+实现部分宏
+
+    #define IMPLEMENT_META_INTERFACE(INTERFACE, NAME)                       \
+        const ::android::String16 I##INTERFACE::descriptor(NAME);           \
+        const ::android::String16&                                          \
+                I##INTERFACE::getInterfaceDescriptor() const {              \
+            return I##INTERFACE::descriptor;                                \
+        }                                                                   \
+        ::android::sp<I##INTERFACE> I##INTERFACE::asInterface(              \
+                const ::android::sp<::android::IBinder>& obj)               \
+        {                                                                   \
+            ::android::sp<I##INTERFACE> intr;                               \
+            if (obj != NULL) {                                              \
+                intr = static_cast<I##INTERFACE*>(                          \
+                    obj->queryLocalInterface(                               \
+                            I##INTERFACE::descriptor).get());               \
+                if (intr == NULL) {                                         \
+                    intr = new Bp##INTERFACE(obj);                          \
+                }                                                           \
+            }                                                               \
+            return intr;                                                    \
+        }                                                                   \
+        I##INTERFACE::I##INTERFACE() { }                                    \
+        I##INTERFACE::~I##INTERFACE() { } 
+
+展开后
+
+    	//在IServiceManager文件最后
+    	//IMPLEMENT_META_INTERFACE(ServiceManager, "android.os.IServiceManager")                       
+        const ::android::String16 IServiceManager::descriptor("android.os.IServiceManager");           
+        const ::android::String16&                                          
+                IServiceManager::getInterfaceDescriptor() const {              
+            return IServiceManager::descriptor;                                
+        }                                                                   
+        ::android::sp<IServiceManager> IServiceManager::asInterface(              
+                const ::android::sp<::android::IBinder>& obj)               
+        {                                                                   
+            ::android::sp<IServiceManager> intr;                               
+            if (obj != NULL) {                                              
+                intr = static_cast<IServiceManager*>(                          
+                    obj->queryLocalInterface(                               
+                            IServiceManager::descriptor).get());               
+                if (intr == NULL) {                                         
+                    intr = new BpServiceManager(obj);                          
+                }                                                           
+            }                                                               
+            return intr;                                                    
+        }                                                                   
+        IServiceManager::IServiceManager() { }                                    
+        IServiceManager::~IServiceManager() { } 
+
+展开后IServiceManager 的asInterface函数如果binder不为空，通过descriptor查找到的IServiceManager【】，如果为空则构建BpServiceManager【BpInterface是模板类，BpServiceManager继承时指明父类类型为IServiceManager，所以BpServiceManager继承自IServiceManager】
+
+C++语法知识
+
+class BpServiceManager : public BpInterface<IServiceManager> 
+
+1. 当子类(BpServiceManager )继承的父类(BpInterface)是一个类模板时，子类在声明的时候要指定出父类中的类型(IServiceManager)；
+2. 如果要灵活指定父类中的T的类型，子类也需要变成模板类(模板类继承模板类)
+3. 如果不指定，编译器无法给子类分配内存
