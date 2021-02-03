@@ -90,3 +90,5 @@ camera2:https://www.cnblogs.com/renhui/p/8718758.html
 https://blog.csdn.net/tyyj90/article/details/110449964
 
 CameraService：https://blog.csdn.net/lb377463323/article/details/78796915
+
+Traces:https://www.cnblogs.com/blogs-of-lxl/p/10926824.html
