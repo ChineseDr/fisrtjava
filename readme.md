@@ -92,3 +92,5 @@ https://blog.csdn.net/tyyj90/article/details/110449964
 CameraService：https://blog.csdn.net/lb377463323/article/details/78796915
 
 Traces:https://www.cnblogs.com/blogs-of-lxl/p/10926824.html
+
+markdown时序图：https://blog.csdn.net/qq_37196887/article/details/112764646
