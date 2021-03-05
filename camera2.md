@@ -24,3 +24,5 @@ camera2：https://blog.csdn.net/zhangbijun1230/article/details/80555769
 anr分析：https://blog.csdn.net/qq_31339141/article/details/108176722
 
 crash分析：https://blog.csdn.net/arunboy/article/details/100689907
+
+camerahal：https://blog.csdn.net/icamera0/article/details/50183735
